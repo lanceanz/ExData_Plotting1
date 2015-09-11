@@ -1,5 +1,6 @@
-## Plot1.R
+## plot1.R
 ## Created 11-Sep-15 as part of Exploratory Data Analysis, week 1, project 1
+## Sumbit four sets of R-code and the png plot it creates 
 ##
 ## Assumptions: the current working directory is the location for all input and output
 
@@ -24,6 +25,6 @@ rm("consump")  # free memory
 consump2$Log_time <- strptime(paste(consump2$Date,consump2$Time), "%d/%m/%Y %H:%M:%S", tz="CET")
 
 # (5). Create png file for Plot 1.  The hex RGB value for the bar colour was taken from the example
-png(filename = "Plot1.png", width=480, height=480)
+png(filename = "plot1.png", width=480, height=480)
 hist(consump2$Global_active_power, col= "#DA4820", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 dev.off()
