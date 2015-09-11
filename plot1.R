@@ -22,7 +22,8 @@ rm("consump")  # free memory
 
 # (4). convert Date + Time into datetime class for ease of plotting
 # tz doesn't really matter, but data is from France so assume CET
-consump2$Log_time <- strptime(paste(consump2$Date,consump2$Time), "%d/%m/%Y %H:%M:%S", tz="CET")
+# Note that without forcing the class to POSIXct we get a combination of POSIXlt POSIXt that cannot be used for plots
+consump2$Log_time <- as.POSIXct(strptime(paste(consump2$Date,consump2$Time), "%d/%m/%Y %H:%M:%S", tz="CET"))
 
 # (5). Create png file for Plot 1.  The hex RGB value for the bar colour was taken from the example
 png(filename = "plot1.png", width=480, height=480)
