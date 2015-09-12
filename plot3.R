@@ -25,7 +25,7 @@ rm("consump")  # free memory
 # Note that without forcing the class to POSIXct we get a combination of POSIXlt POSIXt that cannot be used for plots
 consump2$Log_time <- as.POSIXct(strptime(paste(consump2$Date,consump2$Time), "%d/%m/%Y %H:%M:%S", tz="CET"))
 
-# (5). Create png file for Plot 1.  The hex RGB value for the bar colour was taken from the example
+# (5). Create png file for Plot 3.  The hex RGB value for the bar colour was taken from the example
 png(filename = "plot3.png", width=480, height=480)
 with(consump2, plot(Log_time, Sub_metering_1, type = "n", xlab="", ylab="Energy sub metering"))
 with(consump2, points(Log_time, Sub_metering_1, col = "black", type = "l"))
